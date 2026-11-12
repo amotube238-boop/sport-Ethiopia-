@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sport Ethiopia</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#f2f4f5;
+ color:#17232c;
+ font-family:Arial,sans-serif;
+}
+header{
+ background:#075b35;
+ color:white;
+ padding:20px 15px;
+}
+.logo{font-size:25px;font-weight:bold}
+.tagline{font-size:13px;margin-top:5px}
+nav{
+ background:#06472c;
+ padding:12px;
+ display:flex;
+ justify-content:space-around;
+ color:white;
+ font-size:13px;
+}
+select{
+ padding:9px;
+ border-radius:6px;
+ margin-top:12px;
+}
+.container{padding:15px}
+h2{color:#075b35;font-size:19px}
+.card{
+ background:white;
+ padding:15px;
+ border-radius:9px;
+ margin:12px 0;
+ box-shadow:0 2px 6px #0001;
+}
+.card h3{margin-top:5px}
+.ad{
+ background:#e3e9e5;
+ border:1px dashed #668875;
+ text-align:center;
+ padding:22px 10px;
+ border-radius:8px;
+ color:#53675a;
+ margin:15px 0;
+ font-size:13px;
+}
+.category{
+ color:#087b42;
+ font-size:12px;
+ font-weight:bold;
+}
+footer{
+ background:#075b35;
+ color:white;
+ padding:25px 15px;
+ text-align:center;
+ margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="logo">⚽ SPORT ETHIOPIA</div>
+ <div class="tagline" id="tagline">
+ Your Home of Football
+ </div>
+ <select id="language" onchange="changeLanguage()">
+  <option value="en">English</option>
+  <option value="om">Afaan Oromoo</option>
+  <option value="am">አማርኛ</option>
+ </select>
+</header>
+
+<nav>
+ <span id="home">Home</span>
+ <span id="news">News</span>
+ <span id="fixtures">Fixtures</span>
+ <span id="results">Results</span>
+</nav>
+
+<div class="container">
+
+<h2 id="topNews">Latest Football News</h2>
+
+<div class="card">
+ <div class="category">FOOTBALL NEWS</div>
+ <h3 id="article1">Welcome to Sport Ethiopia</h3>
+ <p id="description1">
+ Get the latest football news, updates and analysis.
+ </p>
+</div>
+
+<div class="ad">
+ <strong>ADVERTISEMENT</strong>
+ <p>Advertising space available</p>
+</div>
+
+<h2 id="matches">Football Fixtures</h2>
+
+<div class="card">
+ <div class="category">SAMPLE FIXTURE</div>
+ <h3>Arsenal vs Chelsea</h3>
+ <p>Match information coming soon.</p>
+</div>
+
+<div class="card">
+ <div class="category">SAMPLE FIXTURE</div>
+ <h3>Liverpool vs Manchester United</h3>
+ <p>Match information coming soon.</p>
+</div>
+
+<div class="ad">
+ <strong>ADVERTISEMENT</strong>
+ <p>Your business can advertise here.</p>
+</div>
+
+<h2 id="about">About Us</h2>
+<div class="card">
+ <p id="aboutText">
+ Sport Ethiopia brings football news and information
+ to football fans.
+ </p>
+</div>
+
+</div>
+
+<footer>
+ <strong>SPORT ETHIOPIA</strong>
+ <p>© 2026 Sport Ethiopia</p>
+ <p>Contact: Your email will appear here</p>
+</footer>
+
+<script>
+const translations = {
+ en:{
+  tagline:"Your Home of Football",
+  home:"Home",news:"News",
+  fixtures:"Fixtures",results:"Results",
+  topNews:"Latest Football News",
+  article1:"Welcome to Sport Ethiopia",
+  description1:"Get the latest football news, updates and analysis.",
+  matches:"Football Fixtures",
+  about:"About Us",
+  aboutText:"Sport Ethiopia brings football news and information to football fans."
+ },
+ om:{
+  tagline:"Mana Odeeffannoo Kubbaa Miilaa",
+  home:"Mana",news:"Oduu",
+  fixtures:"Taphoota",results:"Bu'aa",
+  topNews:"Oduu Kubbaa Miilaa Haaraa",
+  article1:"Baga gara Sport Ethiopia dhuftan",
+  description1:"Oduu kubbaa miilaa haaraa fi xiinxala argadhaa.",
+  matches:"Sagantaa Taphoota",
+  about:"Waa'ee Keenya",
+  aboutText:"Sport Ethiopia jaallattoota kubbaa miilaatiif oduu fi odeeffannoo dhiyeessa."
+ },
+ am:{
+  tagline:"የእግር ኳስ መረጃ ምንጭዎ",
+  home:"መነሻ",news:"ዜና",
+  fixtures:"ጨዋታዎች",results:"ውጤቶች",
+  topNews:"የቅርብ ጊዜ የእግር ኳስ ዜና",
+  article1:"ወደ Sport Ethiopia እንኳን በደህና መጡ",
+  description1:"የቅርብ ጊዜ የእግር ኳስ ዜናዎችን ያግኙ።",
+  matches:"የጨዋታ መርሃ ግብር",
+  about:"ስለ እኛ",
+  aboutText:"Sport Ethiopia ለእግር ኳስ ወዳጆች ዜናና መረጃ ያቀርባል።"
+ }
+};
+
+function changeLanguage(){
+ const lang=document.getElementById("language").value;
+ const t=translations[lang];
+ Object.keys(t).forEach(id=>{
+  document.getElementById(id).innerText=t[id];
+ });
+}
+</script>
+
+</body>
+</html>
+>
